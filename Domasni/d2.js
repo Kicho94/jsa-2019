@@ -27,8 +27,34 @@ var totalCharCount = (data) => {
 
 var totalWordCount = (data) => {
    console.log("There are " + data.split(" ").length + " words in this text")
-   console.log("There are "+ data.spli)
+   
 };
+
+var  totalSentCount = (data) => {
+    console.log ('There are ' + data.split('.').length +  ' sentences in this text');
+    var smallerThanSeven = []
+    var evenWithSeven = []
+    var biggerThanSever = []
+    for(let i = 0; i < data.split(' ').length; i++){
+        if(data.split(' ')[i].length === 7){
+            evenWithSeven.push(data.split(' ')[i])
+        }
+        else if(data.split(' ')[i].length < 7){
+            smallerThanSeven.push(data.split(' ')[i])
+
+        }
+        else{
+            biggerThanSever.push(data.split(' ')[i])
+        }
+            
+        }
+    console.log('There are ' + evenWithSeven.length + ' words with 7 characters')
+    console.log('There are ' + biggerThanSever.length + 'words with more than 7 characters ')
+    console.log('There are ' + smallerThanSeven.length + ' words with less than 7 characters')
+
+    }
+    
+
 
 
 
