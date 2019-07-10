@@ -29,7 +29,7 @@
         <table border="1" width="50%">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    
                     <th>Name</th>
                     <th>Price</th>
                     <th>Calories</th>
@@ -37,10 +37,10 @@
                 </tr>
             </thead>
             <tr>
-                <td><input type="text" id="id"></td>
+                
                 <td><input type="text" id="name"></td>
-                <td><input type="text" id="price"></td>
-                <td><input type="text" id="calories"></td>
+                <td><input type="Number" id="price"></td>
+                <td><input type="Number" id="calories"></td>
                 <td>
                     <button type="button" id="add-user">Add user</button>
                 </td>
@@ -100,16 +100,30 @@
         });
 
 
-        var id = document.getElementById('id').value
+        
+        var addUser = document.getElementById('add-user')
+        addUser.addEventListener('click',(e) =>{
+         
         var name = document.getElementById('name').value
         var price = document.getElementById('price').value
         var calories = document.getElementById('calories').value
-        var addUser = document.getElementById('add-user')
-        var data1= [ {id:id, name:name, price:price, calories:calories} ]
-        addUser.addEventListener('click',(e) =>{
-            fetch(
-                    `http://127.0.0.1:8080/food`,
-                   {method: 'post'}
+       
+        var data=  { name:name, price:price, calories:calories} 
+        
+        fetch(
+                            `http://127.0.0.1:8080/food/${data[i].id}`,
+                            {method: 'patch',
+                             headers: {
+                            'Content-Type': 'application/json'
+                                     },   
+                             body: JSON.stringify
+                        
+          
+                        .then(res => res.json())
+                        .then(output => {
+                          
+                        });
+        
                 
                         
         })
