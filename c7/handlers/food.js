@@ -1,4 +1,5 @@
 var fs = require('fs');
+var modelFood = require('../models/food');
 
 var GetAllFood = (req, res) => {
     fs.readFile('./food_list.json', 'utf8', (err, data) => {

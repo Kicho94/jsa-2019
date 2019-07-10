@@ -1,3 +1,4 @@
+var modelFood = require('../models/food.js');
 var First = (req, res) => {
     var data = {
         ime: 'Pero', 
@@ -11,6 +12,17 @@ var First = (req, res) => {
     res.render('first', data);
 }
 
+var Food  = (req, res) => {
+       modelFood.getAll()
+    .then(data =>{
+        return res.render('food', {f: data})
+    })
+    .catch(err =>{
+        return res.send("ERROR")
+    })
+};
+
 module.exports = {
-    First
+    First,
+    Food
 }

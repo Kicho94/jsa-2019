@@ -34,6 +34,7 @@ api.patch('/food/:id', food.PartialUpdateFood);
 api.delete('/food/:id', food.DeleteFood);
 
 api.get('/first', templates.First);
+api.get('/seckond', templates.Food);
 
 
 api.listen(8080, (err) => {

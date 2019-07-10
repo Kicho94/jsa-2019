@@ -110,31 +110,7 @@
             var nameField = document.querySelector('#name');
             var priceField = document.querySelector('#price');
             var caloriesField = document.querySelector('#calories');
-
-        
-        var addUser = document.getElementById('add-user')
-        addUser.addEventListener('click',(e) =>{
-         
-        var name = document.getElementById('name').value
-        var price = document.getElementById('price').value
-        var calories = document.getElementById('calories').value
-       
-        var data=  { name:name, price:price, calories:calories} 
-        
-        fetch(
-            `http://127.0.0.1:8080/food/${data[i].id}`,
-            {
-                method: 'patch',
-                body: JSON.stringify,
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }
-        )
-        .then(res => res.json())
-        .then(output => {
-        
-        });
+                                 
             if(validate) {
                 var data = {
                     id: Number(document.querySelector(".data tr:last-of-type td").innerText) + 1,
